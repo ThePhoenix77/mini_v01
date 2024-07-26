@@ -1,0 +1,111 @@
+//EXIT CASES:
+    1.  Script Completion: Reaches the end of instructions.
+    2.  Explicit Exit Command: exit is called.
+    3.  Error in Command: With set -e, any command failure.
+    4.  Uncaught Signal: Receives a signal like SIGINT or SIGTERM.
+    5.  Exit in a Subshell: Subshell error with set -e.
+    6.  Syntax Errors: Prevents further execution.
+    7.  return in Non-Function Context: Causes exit.
+    8.  Exit in Traps: exit or kill in a trap.
+    9.  User-Initiated Exit: Manual interrupt (e.g., Ctrl+C).
+    10. Resource Limits Exceeded: Exceeds system limits.
+    11. End-of-File on Input: Unexpected EOF when reading.
+    12. Using exec: Replaces the current shell process.
+
+
+//PARSING:
+    1. Commands (simple and compound)
+        Quoting ('...', "...", \)
+        Comments (#)
+        Variables and expansions ($VAR, ${VAR}, $(...), $((...)))
+    2. Control Structures:
+
+        Conditionals (if, then, else, elif, fi, case, esac)
+        Loops (for, while, until, do, done)
+        Functions (declaration and invocation)
+    3. I/O Redirection:
+
+        Input/Output redirection (<, >, >>, 2>, 2>>, &>, <<, <<<)
+        Pipes (|, |&)
+    4. Operators:
+
+        Logical operators (&&, ||)
+        Background execution (&, wait)
+        Subshells ((...))
+    5. Special Characters/Expansions:
+
+        Globbing (*, ?, [...])
+        Braces expansion ({a,b}, {1..10})
+        Tilde expansion (~, ~user)
+        Parameter expansion (${#VAR}, ${VAR:-default}, ${VAR:+value}, ${VAR=value}, ${VAR?error})
+    6. Error Handling:
+
+        set -e, set -u, set -o pipefail
+        Signals and traps (trap 'commands' SIGNAL)
+    7. Miscellaneous:
+
+        Aliases (alias name='command')
+        Arrays (arr=(1 2 3), ${arr[0]})
+        Sourcing files (source file, . file)
+        Special parameters ($?, $0, $#, $@, $*, $!, $$)
+        Exit and return (exit [n], return [n])
+    8. Advanced Parsing:
+
+        Extended globbing (@(pattern|pattern), !(pattern), etc.)
+        Process substitution (<(command), >(command))
+        Coprocesses (coproc NAME { command; })
+
+//REDIRECTIONS:
+    ◦ < should redirect input.
+    ◦ > should redirect output.
+    ◦ << should be given a delimiter, then read the input until a line containing the
+        delimiter is seen. However, it doesn’t have to update the history!
+    ◦ >> should redirect output in append mode.
+
+
+
+
+
+# minishell topics
+
+#  Token Recognition :
+
+--->  If the end of input is recognized, the shell has reached the end of the input text, such as the end of a command line input.
+
+--->  When the shell recognizes the end of the input, it will complete (or "delimit") the token it is currently processing. This means that the sequence of characters that make up the current token is finalized and ready to be used by the shell.
+{
+    Input: echo Hello
+      Tokenization Process:
+          echo is recognized as a token.
+            A space indicates the end of echo, so echo is delimited.
+              Hello is then recognized as a token.
+}
+
+--->  If there is no current token, the shell has not started building a token at the end of the input. This can happen if there is whitespace or no characters after the last token.
+
+--->  If no token is being built, the shell will return a special marker indicating the end of input. This marker tells the shell that there are no more tokens to process.
+
+===> This rule describes how the shell handles characters when they are part of an operator. An operator in a shell context is a character or sequence of characters that performs a specific function, such as &&, ||, |, >, and <.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# If the previous character was used as part of an operator :                                                                                                                -
+This means the shell has already recognized that the previous character is part of an operator. For example, in &&, the first & is recognized as part of an operator.        -
+# and the current character is not quoted :                                                                                                                                  -
+The current character being analyzed by the shell is not enclosed in quotes (single or double quotes). Quoted characters are treated literally and not as part of operators. -
+# and can be used with the current characters to form an operator :                                                                                                          -
+The current character can combine with the previous characters to form a valid operator. For example, the second & in && combines with the first & to form the && operator.  -
+# it shall be used as part of that (operator) token :                                                                                                                        -
+The current character is added to the operator token that is being formed. So, && is recognized as a single operator token rather than two separate & characters.            -
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--->  If the previous character was used as part of an operator and the current character cannot be used with the current characters to form an operator, the operator containing the previous character shall be delimited.
+
+
+
+
+echo "# mini_v01" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/ThePhoenix77/mini_v01.git
+git push -u origin main
