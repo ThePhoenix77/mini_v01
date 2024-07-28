@@ -6,7 +6,7 @@
 /*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 14:22:15 by eaboudi           #+#    #+#             */
-/*   Updated: 2024/07/21 16:21:07 by tboussad         ###   ########.fr       */
+/*   Updated: 2024/07/26 12:10:01 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 #include <readline/history.h>
 #include <errno.h>
 #include <stdbool.h>
-#include "libft/libft.h"
+#include "./libft/libft.h"
 
 
 typedef	struct s_global
