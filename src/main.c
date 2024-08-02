@@ -6,11 +6,11 @@
 /*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 15:06:33 by eaboudi           #+#    #+#             */
-/*   Updated: 2024/07/23 09:49:04 by tboussad         ###   ########.fr       */
+/*   Updated: 2024/07/31 21:28:40 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../includes/minishell.h"
 
 void check_leaks()
 {

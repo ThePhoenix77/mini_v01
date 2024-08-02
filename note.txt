@@ -102,10 +102,5 @@ The current character is added to the operator token that is being formed. So, &
 
 
 
-echo "# mini_v01" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/ThePhoenix77/mini_v01.git
-git push -u origin main
+BUILTINS :
+    exit status number should'nt surpass 21474836470000000000; 

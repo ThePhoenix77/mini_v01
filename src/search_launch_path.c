@@ -6,11 +6,11 @@
 /*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 14:29:17 by tboussad          #+#    #+#             */
-/*   Updated: 2024/07/21 16:23:28 by tboussad         ###   ########.fr       */
+/*   Updated: 2024/07/31 21:28:30 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../includes/minishell.h"
 
 //find cmd path from PATH in env
 char	*find_path(char **split, char *cmd)
