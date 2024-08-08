@@ -6,7 +6,7 @@
 /*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 17:38:11 by tboussad          #+#    #+#             */
-/*   Updated: 2024/08/07 21:17:55 by tboussad         ###   ########.fr       */
+/*   Updated: 2024/08/07 21:43:28 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int ft_cd(char **args, char **env) {
     return 0;
 }
 
-int main(int argc, char *argv[], char *envp[]) {
+/*int main(int argc, char *argv[], char *envp[]) {
     char *args1[] = {"cd", NULL};       // Test with no arguments (should go to HOME)
     char *args2[] = {"cd", "..", NULL}; // Test with relative path
     char *args3[] = {"cd", "/", NULL};  // Test with absolute path
@@ -107,4 +107,4 @@ int main(int argc, char *argv[], char *envp[]) {
     ft_cd(args2, envp);
 
     return 0;
-}
+}*/
