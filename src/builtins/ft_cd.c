@@ -6,10 +6,11 @@
 /*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 17:38:11 by tboussad          #+#    #+#             */
-/*   Updated: 2024/08/07 21:43:28 by tboussad         ###   ########.fr       */
+/*   Updated: 2024/08/08 18:04:08 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../../includes/minishell.h"
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>

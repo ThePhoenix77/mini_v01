@@ -6,7 +6,7 @@
 /*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 14:22:15 by eaboudi           #+#    #+#             */
-/*   Updated: 2024/07/30 13:55:35 by tboussad         ###   ########.fr       */
+/*   Updated: 2024/08/08 18:04:36 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # define HISTORY_FILE ".shell_history"
 
 #include "../libft/libft.h"
+#include <string.h>
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>

@@ -6,7 +6,7 @@
 #    By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/21 14:21:59 by eaboudi           #+#    #+#              #
-#    Updated: 2024/07/21 14:44:22 by tboussad         ###   ########.fr        #
+#    Updated: 2024/08/08 18:29:42 by tboussad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = minishell
 HEADER = minishell.h
-CFILES = main.c history_utils.c search_launch_path.c
+#CFILES = main.c history_utils.c search_launch_path.c
 OFILES = $(CFILES:%.c=%.o)
-LIBFT_DIR = libft
+LIBFT_DIR = ../libft
 RM = rm -rf
 
 all: $(NAME)
