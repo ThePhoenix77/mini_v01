@@ -6,7 +6,7 @@
 /*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 17:38:11 by tboussad          #+#    #+#             */
-/*   Updated: 2024/08/08 18:04:08 by tboussad         ###   ########.fr       */
+/*   Updated: 2024/08/08 20:42:15 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,9 @@
 // 	element->value = ft_strdup(owd);
 // }
 
-void set_dir(char **env, const char *cwd, const char *owd) {
+//to modify (setenv not allowed)
+void set_dir(char **env, const char *cwd, const char *owd)
+{
     setenv("PWD", cwd, 1);
     setenv("OLDPWD", owd, 1);
 }
@@ -59,8 +61,7 @@ int ft_cd(char **args, char **env) {
 
     if (!args[1])
     {
-        const char *home = getenv("HOME");
-        if (chdir(home) != 0) {
+        if (chdir(getenv("HOME")) != 0) {
             perror("cd");
             return 1;
         }

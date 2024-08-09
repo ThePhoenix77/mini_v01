@@ -6,7 +6,7 @@
 /*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 14:22:15 by eaboudi           #+#    #+#             */
-/*   Updated: 2024/08/08 18:04:36 by tboussad         ###   ########.fr       */
+/*   Updated: 2024/08/09 16:36:04 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,17 @@
 # define HISTORY_FILE ".shell_history"
 
 #include "../libft/libft.h"
-#include <string.h>
-#include <unistd.h>
 #include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
+#include <string.h>
+#include <signal.h>
+#include <errno.h>
+#include <sys/wait.h>
 #include <readline/readline.h>
 #include <readline/history.h>
-#include <errno.h>
-#include <stdbool.h>
 
+typedef struct sigaction t_sigaction;
 
 typedef	struct s_global
 {

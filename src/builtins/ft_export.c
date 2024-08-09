@@ -6,7 +6,7 @@
 /*   By: tboussad <tboussad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 21:34:12 by tboussad          #+#    #+#             */
-/*   Updated: 2024/08/08 18:31:38 by tboussad         ###   ########.fr       */
+/*   Updated: 2024/08/09 08:55:51 by tboussad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,19 +110,19 @@ void ft_export(char *args[])
 }
 
 int main(int argc, char *argv[]) {
-    // char *args1[] = {"VAR1=value1", "VAR2=value2", NULL};
-    // char *args2[] = {"VAR3=", NULL}; // Missing value
-    // char *args3[] = {"=value4", NULL}; // Missing variable
+    char *args1[] = {"VAR1=value1", "VAR2=value2", NULL};
+    char *args2[] = {"VAR3=", NULL}; // Missing value
+    char *args3[] = {"=value4", NULL}; // Missing variable
 
-    ft_export(argv);
-    // ft_export(args1);
-    // printf("VAR1: %s\n", getenv("VAR1"));
-    // printf("VAR2: %s\n", getenv("VAR2"));
+    // ft_export(argv);
+    ft_export(args1);
+    printf("VAR1: %s\n", getenv("VAR1"));
+    printf("VAR2: %s\n", getenv("VAR2"));
 
-    // ft_export(args2);
-    // printf("VAR3: %s\n", getenv("VAR3"));
+    ft_export(args2);
+    printf("VAR3: %s\n", getenv("VAR3"));
 
-    // ft_export(args3);
+    ft_export(args3);
 
     return 0;
 }
